@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-    <app-header>
-      <Appheader />
-    </app-header>
+      <app-header/>
+      <memo-app/>
     <!-- <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
@@ -24,12 +23,14 @@
 
 <script>
 // AppHeader.vue import하기
-import Appheader from './components/AppHeader';
+import AppHeader from './components/AppHeader';
+import MemoApp from './components/MemoApp';
 
 export default {
   name: 'app',
   components: {
-    Appheader
+    AppHeader,
+    MemoApp
   }
   // 프로젝트 생성 시 처음에 등록되어있던 코드
   // data () {

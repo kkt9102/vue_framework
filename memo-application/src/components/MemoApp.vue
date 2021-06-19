@@ -27,6 +27,10 @@ import Memo from './Memo';
 
 export default {
     name: 'MemoApp',
+    components: {
+        MemoForm,
+        Memo
+    },
     data () {
         return {
             memos: [],

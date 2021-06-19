@@ -156,7 +156,43 @@
     9. MemoForm.vue에 사용자가 입력할 수 있는 form 구현
         -작성코드
 [코드 보러가기](/MemoForm.vue_초기작성코드.md)
+---
+    10. MemoApp.vue에 components 추가하기 (삽질함)
+        -책보고 그대로 따라했다가 components 빼먹어서 삽질함...
+        -MemoApp.vue에 components 추가하기
+        -추가코드
+            .
+            .
+            .
+            .
+            components: {
+                MemoForm,
+                Memo
+            },
+            data () {
+                return {
+                    memos: [],
+            .
+            .
+            .
+            .
+---
+    11. App.vue에 MemoApp.vue 등록하기
+        -MemoApp 컴포넌트를 App.vue에 등록하기
+        -변경된 코드
+            <script>
+            import AppHeader from './components/AppHeader';
+            import MemoApp from './components/MemoApp';
 
+            export default {
+            name: 'app',
+            components: {
+                AppHeader,
+                MemoApp
+                }
+            }
+            </script>
+        -'template > div' 안에 <memo-app/> 추가하기
 ## 특이사항
 1. 프로젝트 생성 후 오류가 뜸. 작동은 정상적으로 됨
     - 오류코드
