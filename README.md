@@ -155,7 +155,7 @@
 ---
     9. MemoForm.vue에 사용자가 입력할 수 있는 form 구현
         -작성코드
-        [코드가 너무 길어서 링크로 대체](https://github.com/kkt9102/vue_memo_app/blob/master/memo-application/src/components/MemoForm.vue).
+[코드 보러가기](/MemoForm.vue_초기작성코드.md)
 
 ## 특이사항
 1. 프로젝트 생성 후 오류가 뜸. 작동은 정상적으로 됨
