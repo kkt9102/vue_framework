@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <app-header>
-      <Appheader></Appheader>
+      <Appheader />
     </app-header>
     <!-- <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>

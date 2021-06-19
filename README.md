@@ -117,7 +117,7 @@
         <template>
             <div id="app">
                 <app-header>
-                <Appheader></Appheader>
+                    <Appheader />
                 </app-header>
             </div>
         </template>
@@ -125,7 +125,33 @@
     7. 메모 데이터 생성 기능을 구현하기위한 파일생성
         -src 폴더안에 Memo.vue, MemoApp.vue, MemoForm.vue 생성
 ---
-    8. 
+    8. MemoApp.vue에 코드 작성
+        -작성한 코드
+            <template>
+                <div class="memo-app">
+                    <memo-form />
+                    <memo />
+                </div>
+            </template>
+
+            <script>
+            import MemoForm from './MemoForm';
+            import Memo from './Memo';
+
+            export default {
+                name: 'MemoApp',
+                data () {
+                    return {
+                        memos: [],
+                    };
+                },
+                created() {
+                    // 1. 만약 기존에 추가된 localStorage에 데어터가 있다면 created 훅에서 localStorage의 데이터를 컴포넌트 내의 memos 데어터에 넣어주고, 
+                    // 그렇지 않다면 그대로 빈 배열로 초기화함.
+                    this.memos = localStorage.memos ? JSON.parse(localStorage.memos) : [];
+                }
+            }
+            </script>
 ## 특이사항
 1. 프로젝트 생성 후 오류가 뜸. 작동은 정상적으로 됨
     - 오류코드
