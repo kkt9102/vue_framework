@@ -19,24 +19,24 @@
         -npm run dev
 ## 작업순서
 ---
-1. 프로젝트 생성
+    1. 프로젝트 생성
         -Project name: memo-application (memo_crud)
         -Project description: A Vue.js project (vue.js project)
         -Author: kkt9102@gmail.com
         -License: kkt9102
         -Use Sass?: NO
 ---
-2. common.css 추가
+    2. common.css 추가
         -src폴더 안에 style 폴더 추가
         -style폴더 안에 common.css 추가 및 적용 (개인적으로 쓰는 common.css임)
 ---
-3. common.css import하기
+    3. common.css import하기
         -App.vue에 작성한 common.css import하기
         -App.vue 의 33번째 줄 부터 <style> 가 시작됨
         -추가 코드
             @import "./style/common.css";
 ---
-4. 헤더(Header)컴포넌트 생성
+    4. 헤더(Header)컴포넌트 생성
         -src 폴더 안에 components 폴더 추가
         -components 폴더 안에 AppHeader.vue 추가 및 코드 작성
         -추가 코드
