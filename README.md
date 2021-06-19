@@ -121,7 +121,11 @@
                 </app-header>
             </div>
         </template>
-
+---
+    7. 메모 데이터 생성 기능을 구현하기위한 파일생성
+        -src 폴더안에 Memo.vue, MemoApp.vue, MemoForm.vue 생성
+---
+    8. 
 ## 특이사항
 1. 프로젝트 생성 후 오류가 뜸. 작동은 정상적으로 됨
     - 오류코드
