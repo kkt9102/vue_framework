@@ -25,8 +25,7 @@
 
 
 # 특이사항
-1.
-    - 프로젝트 생성 후 오류가 뜸. 작동은 정상적으로 됨
+1. 프로젝트 생성 후 오류가 뜸. 작동은 정상적으로 됨
     - 오류코드
         found 15 vulnerabilities (3 low, 6 moderate, 6 high)
         run `npm audit fix` to fix them, or `npm audit` for details
