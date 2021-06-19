@@ -31,6 +31,8 @@ export default {
 </script>
 
 <style>
+/* common.css import하기 */
+@import "./style/common.css";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
