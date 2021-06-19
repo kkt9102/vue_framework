@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <app-header>
+      <Appheader></Appheader>
+    </app-header>
+    <!-- <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -15,18 +18,25 @@
       <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
 <script>
+// AppHeader.vue import하기
+import Appheader from './components/AppHeader';
+
 export default {
   name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+  components: {
+    Appheader
   }
+  // 프로젝트 생성 시 처음에 등록되어있던 코드
+  // data () {
+  //   return {
+  //     msg: 'Welcome to Your Vue.js App'
+  //   }
+  // }
 }
 </script>
 

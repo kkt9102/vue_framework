@@ -57,6 +57,70 @@
                 .app-header{overflow: hidden; padding: 52px 0 27px;}
                 .app-header h1 {float: left; font-size: 24px; text-align: center;}
             </style>
+---
+    5. App.vue 에 AppHeader.vue import하기
+        -App.vue의 22번째 줄부터 <script> 가 시작됨
+        -변경 전 코드
+        <script>
+            export default {
+            name: 'app',
+             data () {
+               return {
+                 msg: 'Welcome to Your Vue.js App'
+               }
+             }
+            }
+            </script>
+        -변경 후 코드
+        <script>
+        // AppHeader.vue import하기
+        import Appheader from './components/AppHeader';
+
+        export default {
+        name: 'app',
+        components: {
+            Appheader
+        }
+        // 프로젝트 생성 시 처음에 등록되어있던 코드
+        // data () {
+        //   return {
+        //     msg: 'Welcome to Your Vue.js App'
+        //   }
+        // }
+        }
+        </script>
+---
+    6. App.vue에 AppHeader를  커스텀 엘리먼트로 사용하기
+        -App.vue의 시작 코드부분부터 <template> 가 시작됨
+        -변경 전 코드
+        <template>
+            <div id="app">
+                <img src="./assets/logo.png">
+                    <h1>{{ msg }}</h1>
+                    <h2>Essential Links</h2>
+                    <ul>
+                        <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
+                        <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
+                        <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
+                        <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
+                    </ul>
+                    <h2>Ecosystem</h2>
+                    <ul>
+                        <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
+                        <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
+                        <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
+                        <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
+                </ul>
+            </div>
+        </template>
+        -변경 후 코드
+        <template>
+            <div id="app">
+                <app-header>
+                <Appheader></Appheader>
+                </app-header>
+            </div>
+        </template>
 
 ## 특이사항
 1. 프로젝트 생성 후 오류가 뜸. 작동은 정상적으로 됨
