@@ -44,6 +44,11 @@ export default {
         }
     },
     methods: {
+        resetFields () {
+            // 제목과 내용 입력필드 초기화 코드
+            this.title = '';
+            this.content = '';
+        },
         addMemo () {
             // 변수 선언 (title, content )
             const { title, content } = this;
@@ -58,6 +63,8 @@ export default {
 
             // addMemo 이벤트가 발생할 시 사용자가 입력한 데이터를 넣어준다.
             this.$emit('addMemo', { id, title, content });
+            // 데이터 전송 후 입력필드 초기화
+            this.resetFields();
         },
     }
 }
