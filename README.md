@@ -198,6 +198,22 @@
         -MemoForm.vue에 사용자가 값을 입력한 후 저장을 할 때 저장 될 값의 value를 지정해준다.
         -export default 에 data를 추가해 준 뒤 값을 지정해준다.
         -작성코드
+        .
+        .
+        .
+        .
+        <fieldset>
+            <div class="memo-form-box">
+                <input type="text" class="title_input" v-model="title" placeholder="메모의 제목을 입력해주세요." />
+                <textarea class="body_textarea" v-model="content" placeholder="메모의 내용을 입력해주세요." />
+                <button type="reset">초기화</button>
+            </div>
+            <button type="submit">등록하기</button>
+        </fieldset>
+        .
+        .
+        .
+        .
         <script>
         export default {
             name: "MemoForm",
@@ -209,6 +225,10 @@
             }
         }
         </script>
+---
+    13. MemoForm.vue 에 메모를 저장하는 코드 작성
+        -작성코드
+[코드 보러가기](/MemoForm.vue_메모저장기능추가_코드.md)
 ## 특이사항
 1. 프로젝트 생성 후 오류가 뜸. 작동은 정상적으로 됨
     - 오류코드
