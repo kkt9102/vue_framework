@@ -20,7 +20,9 @@
         <!-- <memo-form v-on:addMemo="addMemo" /> -->
         <!-- 약어 사용 후 -->
         <memo-form @addMemo="addMemo"/>
-        <memo />
+        <ul class="memo-list">
+            <memo />
+        </ul>
     </div>
 </template>
 
@@ -59,3 +61,7 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+    .memo-list { padding: 20px 0; margin:0;}
+</style>

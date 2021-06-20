@@ -317,7 +317,19 @@
         </style>
 ```
 ---
-    18. 
+    18. MemoApp.vue에서 Memo.vue 를 추가한 코드를 <ul>로 감싸준다. (리스트로 표현하기위함)
+        -작성코드
+```html
+        <template>
+            <div class="memo-app">
+                <memo-form @addMemo="addMemo"/>
+                <ul class="memo-list">
+                    <memo />
+                </ul>
+            </div>
+        </template>
+```
+    19. 
 ## 특이사항
 1. 프로젝트 생성 후 오류가 뜸. 작동은 정상적으로 됨
     - 오류코드
