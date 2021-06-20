@@ -51,6 +51,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  max-width:1200px;
+  margin-left:auto;
+  margin-right: auto;
 }
 
 h1, h2 {

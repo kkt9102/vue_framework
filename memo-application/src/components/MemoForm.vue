@@ -33,7 +33,14 @@
 <script>
 export default {
     // 컴포넌트의 이름을 MemoForm으로 변경
-    name: "MemoForm"
+    name: "MemoForm",
+    deta () {
+        return {
+            // 사용자가 웹에서 입력한 값이 저장될 데이터
+            title: "",
+            contents: ""
+        }
+    }
 }
 </script>
 
