@@ -40,6 +40,7 @@
         -src 폴더 안에 components 폴더 추가
         -components 폴더 안에 AppHeader.vue 추가 및 코드 작성
         -추가 코드
+```html
             <!-- src/components/AppHeader.vue -->
             <template>
                 <div class="app-header">
@@ -57,10 +58,13 @@
                 .app-header{overflow: hidden; padding: 52px 0 27px;}
                 .app-header h1 {float: left; font-size: 24px; text-align: center;}
             </style>
+```
 ---
     5. App.vue 에 AppHeader.vue import하기
         -App.vue의 22번째 줄부터 <script> 가 시작됨
         -변경 전 코드
+```javascript
+        <!-- file : App.vue -->
         <script>
             export default {
             name: 'app',
@@ -71,7 +75,9 @@
              }
             }
             </script>
+```
         -변경 후 코드
+```javascript
         <script>
         // AppHeader.vue import하기
         import Appheader from './components/AppHeader';
@@ -89,10 +95,13 @@
         // }
         }
         </script>
+```
 ---
     6. App.vue에 AppHeader를  커스텀 엘리먼트로 사용하기
         -App.vue의 시작 코드부분부터 <template> 가 시작됨
         -변경 전 코드
+```html
+        <!-- file : App.vue -->
         <template>
             <div id="app">
                 <img src="./assets/logo.png">
@@ -113,7 +122,9 @@
                 </ul>
             </div>
         </template>
+```
         -변경 후 코드
+```html
         <template>
             <div id="app">
                 <app-header>
@@ -121,12 +132,15 @@
                 </app-header>
             </div>
         </template>
+```
 ---
     7. 메모 데이터 생성 기능을 구현하기위한 파일생성
         -src 폴더안에 Memo.vue, MemoApp.vue, MemoForm.vue 생성
 ---
     8. MemoApp.vue에 코드 작성
         -작성한 코드
+```html
+            <!-- file : MemoApp.vue -->
             <template>
                 <div class="memo-app">
                     <memo-form />
@@ -152,6 +166,7 @@
                 }
             }
             </script>
+```
 ---
     9. MemoForm.vue에 사용자가 입력할 수 있는 form 구현
         -작성코드
@@ -161,6 +176,8 @@
         -책보고 그대로 따라했다가 components 빼먹어서 삽질함...
         -MemoApp.vue에 components 추가하기
         -추가코드
+```javascript
+            <!-- file : MemoApp.vue -->
             .
             .
             .
@@ -176,10 +193,13 @@
             .
             .
             .
+```
 ---
     11. App.vue에 MemoApp.vue 등록하기
         -MemoApp 컴포넌트를 App.vue에 등록하기
         -변경된 코드
+```javascript
+            <!-- file : App.vue -->
             <script>
             import AppHeader from './components/AppHeader';
             import MemoApp from './components/MemoApp';
@@ -192,12 +212,15 @@
                 }
             }
             </script>
+```
         -'template > div' 안에 <memo-app/> 추가하기
 ---
     12. MemoForm.vue에 데이터를 등록하는 코드
         -MemoForm.vue에 사용자가 값을 입력한 후 저장을 할 때 저장 될 값의 value를 지정해준다.
         -export default 에 data를 추가해 준 뒤 값을 지정해준다.
         -작성코드
+```javascript
+        <!-- file : MemoForm.vue -->
         .
         .
         .
@@ -225,10 +248,49 @@
             }
         }
         </script>
+```
 ---
     13. MemoForm.vue 에 메모를 저장하는 코드 작성
         -작성코드
 [코드 보러가기](/MemoForm.vue_메모저장기능추가_코드.md)
+---
+    14. MemoApp.vue에서 MemoForm.vue로부터 받은 데이터를 local에 저장하는 기능 추가 코드 작성
+        -추가코드
+```javascript
+        <!-- file : MemoApp.vue -->
+        .
+        .
+        .
+        .
+        methods: {
+                addMemo (payload) {
+                    // MemoForm에서 받은 데이터를 먼저 MemoApp.vue의 내부 데이터에 추가하는 작업
+                    this.memos.push(payload);
+                    // 받은 데이터를 문자열로 변환한 후, 로컬스토리지에 저장히는 작업
+                    this.storeMemo();
+                },
+                storeMemo () {
+                    const memosToString = JSON.stringify(this.memos);
+                    localStorage.setItem('memos',memosToString);
+                }
+            },
+        }
+        </script>
+```
+---
+    15. MemoApp.vue안에 MemoForm.vue에 사용된 v-no 디렉티브의 약어 표시하기
+        -추가된 코드
+```html
+        <template>
+            <div class="memo-app">
+                <!-- 약어 표현식 사용 전 -->
+                <!-- <memo-form v-on:addMemo="addMemo" /> -->
+                <!-- 약어 사용 후 -->
+                <memo-form @addMemo="addMemo" />
+                <memo />
+            </div>
+        </template>
+```
 ## 특이사항
 1. 프로젝트 생성 후 오류가 뜸. 작동은 정상적으로 됨
     - 오류코드

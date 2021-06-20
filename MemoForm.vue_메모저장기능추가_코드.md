@@ -51,7 +51,7 @@
                     const id = new Data().getTime();
 
                     // 공백체크 (제목 혹은 내용을 입력하지 않았을 때 경고창)
-                    const isEmpty = title.length() <= 0 || content.length() <= 0;
+                    const isEmpty = title.length <= 0 || content.length <= 0;
 
                     if ( isEmpty ) {
                         return false;
