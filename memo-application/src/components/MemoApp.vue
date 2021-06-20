@@ -22,7 +22,7 @@
         <memo-form @addMemo="addMemo"/>
         <ul class="memo-list">
             <!-- v-for를 이용하여 memos데이터의 개수만큼 memo 컴포넌트 랜더링하기 -->
-            <memo v-for="memo in memos" :key="memo.id" :memo="memo"/>
+            <memo v-for="memo in memos" :key="memo.id" :memo="memo" @deleteMemo="deleteMemo"/>
         </ul>
     </div>
 </template>
@@ -58,6 +58,14 @@ export default {
             // memosToString 변수 설정
             const memosToString = JSON.stringify(this.memos);
             localStorage.setItem('memos', memosToString);
+        },
+        deleteMemo (id) {
+            // 자식(Memo.vue) 컴포넌트에서 인자로 전달해주는 id에 해당하는 memo data의 index를 찾는다.
+            const targetIndex = this.memos.findIndex( v => v.id === id );
+            // 찾아낸 data index에 해당하는 data를 삭제한다.
+            this.memos.splice(targetIndex, 1);
+            // 삭제된 후의 데이터를 다시 로컬스토리지에 저장한다.
+            this.storeMemo();
         }
     },
 }

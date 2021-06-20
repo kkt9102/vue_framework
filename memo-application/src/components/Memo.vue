@@ -20,10 +20,8 @@
       <!-- Spring이나 Ruby on Rails 를 이용해서 DB값 뿌려는 방식 (기본적인 Form은 다 비슷한가보다..) -->
       <strong>{{ memo.title }}</strong>
       <p>{{ memo.content }}</p>
-      <button class="deleted_btn" @click="deleteMemo">
-          <div></div>
-          <div></div>
-      </button>
+      <!-- button 클릭시 이벤트를 deleteMemo 함수로 등록 -->
+      <button class="deleted_btn" @click="deleteMemo">X</button>
   </li>
 </template>
 
@@ -38,8 +36,9 @@ export default {
     },
     methods: {
         deleteMemo () {
-
+            // 부모(저장된 데이터)로부터 받은 memo의 id를 
             const id = this.memo.id;
+            //부모 컴포넌트의 사용자 정의 이벤트인 deleteMemo 함수의 파라미터로 전달함.
             this.$emit('deleteMemo', id);
         }
     }
@@ -50,8 +49,5 @@ export default {
     .memo-item {position:relative; width:100%; height:200px; margin-bottom: 50px; border:1px solid #000000;}
     .memo-item strong {font-size:2.0rem;}
     .memo-item p {font-size:1.2rem; margin-top:15px;}
-    .deleted_btn {position: absolute; cursor:pointer; top:10px; right:10px; width:20px; height: 20px; border:none; outline:none; background: none;}
-    .deleted_btn div {position:absolute; width:100%; height: 2px; top:50%; left:0; right:0; background: #000000;}
-    .deleted_btn div:first-child{transform: rotate(45deg);}
-    .deleted_btn div:last-child{transform: rotate(-45deg);}
+    .deleted_btn {position: absolute; cursor:pointer; top:10px; right:10px; width:20px; height: 20px; font-size: 1rem;}
 </style>
