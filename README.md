@@ -339,13 +339,36 @@
                 <memo-form @addMemo="addMemo"/>
                 <ul class="memo-list">
                     <!-- v-for를 이용하여 memos데이터의 개수만큼 memo 컴포넌트 랜더링하기 -->
-                    <memo v-for="memo in moses" :key="memo.id" :memo="memo"/>
+                    <memo v-for="memo in memos" :key="memo.id" :memo="memo"/>
                 </ul>
             </div>
         </template>
 ```
 ---
-    20. 
+    20. Memo.vue에 부모한테서(저장된 데이터) 받은 props 를 등록하는 코드 작성
+        -style작업코드는 따로 기록하지 않음.
+        -작성코드
+```html
+        <template>
+            <li class="memo-item">
+                <strong>{{ memo.title }}</strong>
+                <p>{{ memo.content }}</p>
+            </li>
+            </template>
+
+            <script>
+            export default {
+                name: 'Memo',
+                props: {
+                    memo: {
+                        type: Object
+                    }
+                },
+            }
+            </script>
+```
+---
+    21. 
 ## 특이사항
 1. 프로젝트 생성 후 오류가 뜸. 작동은 정상적으로 됨
     - 오류코드

@@ -51,6 +51,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  /* 개인적인 추가코드 */
+  font-size:62.5%;
   max-width:1200px;
   margin-left:auto;
   margin-right: auto;
@@ -59,7 +61,7 @@ export default {
 h1, h2 {
   font-weight: normal;
 }
-
+/* 
 ul {
   list-style-type: none;
   padding: 0;
@@ -72,5 +74,5 @@ li {
 
 a {
   color: #42b983;
-}
+} */
 </style>
