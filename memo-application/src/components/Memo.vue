@@ -20,7 +20,7 @@
       <!-- Spring이나 Ruby on Rails 를 이용해서 DB값 뿌려는 방식 (기본적인 Form은 다 비슷한가보다..) -->
       <strong>{{ memo.title }}</strong>
       <p>{{ memo.content }}</p>
-      <button class="deleted_btn">
+      <button class="deleted_btn" @click="deleteMemo">
           <div></div>
           <div></div>
       </button>
@@ -36,6 +36,13 @@ export default {
             type: Object
         }
     },
+    methods: {
+        deleteMemo () {
+
+            const id = this.memo.id;
+            this.$emit('deleteMemo', id);
+        }
+    }
 }
 </script>
 

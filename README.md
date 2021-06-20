@@ -368,7 +368,65 @@
             </script>
 ```
 ---
-    21. 
+    21. 저장된 메모 삭제가능 구현하기 기본 코드작업
+        -변경 전 코드
+```html
+    <template>
+        <li class="memo-item">
+            <strong>{{ memo.title }}</strong>
+            <p>{{ memo.content }}</p>
+            <button class="deleted_btn">
+                <div></div>
+                <div></div>
+            </button>
+        </li>
+        </template>
+
+        <script>
+        export default {
+            name: 'Memo',
+            props: {
+                memo: {
+                    type: Object
+                }
+            }
+        </script>
+```
+        -변경 된 코드
+```html
+    <template>
+        <li class="memo-item">
+            <strong>{{ memo.title }}</strong>
+            <p>{{ memo.content }}</p>
+            <!-- 변경된 부분_1 '@click="deleteMemo"' 추가-->
+            <button class="deleted_btn" @click="deleteMemo">
+                <div></div>
+                <div></div>
+            </button>
+        </li>
+        </template>
+
+        <script>
+        export default {
+            name: 'Memo',
+            props: {
+                memo: {
+                    type: Object
+                }
+            },
+            // 변경된 부분_2 methods 추가
+            methods: {
+                deleteMemo () {
+
+                    const id = this.memo.id;
+                    this.$emit('deleteMemo', id);
+                }
+            }
+        }
+        </script>
+```
+---
+    22. 
 ## 특이사항
 1. 프로젝트 생성 후 오류가 뜸. 작동은 정상적으로 됨
     - 오류코드
