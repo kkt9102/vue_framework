@@ -32,20 +32,20 @@ export default {
     name: 'MemoApp',
     components: {
         MemoForm,
-        Memo,
+        Memo
     },
     data () {
         return {
             memos: [],
         };
     },
-    created() {
+    created () {
         // 1. 만약 기존에 추가된 localStorage에 데어터가 있다면 created 훅에서 localStorage의 데이터를 컴포넌트 내의 memos 데어터에 넣어주고, 
         // 그렇지 않다면 그대로 빈 배열로 초기화함.
         this.memos = localStorage.memos ? JSON.parse(localStorage.memos) : [];
     },
     methods: {
-        addMemo (payload) {
+        addMemo(payload) {
             // MemoForm에서 받은 데이터를 먼저 MemoApp.vue의 내부 데이터에 추가하는 작업
             this.memos.push(payload);
             // 받은 데이터를 문자열로 변환한 후, 로컬스토리지에 저장히는 작업

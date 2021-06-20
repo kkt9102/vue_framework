@@ -48,16 +48,16 @@ export default {
             // 변수 선언 (title, content )
             const { title, content } = this;
             // 저장될 데이터의 고유한 식별용 id 생성
-            const id = new Data().getTime();
+            const id = new Date().getTime();
             // 공백체크 (제목 혹은 내용을 입력하지 않았을 때 경고창)
             const isEmpty = title.length <= 0 || content.length <= 0;
 
-            if ( isEmpty ) {
+            if (isEmpty) {
                 return false;
             }
 
             // addMemo 이벤트가 발생할 시 사용자가 입력한 데이터를 넣어준다.
-            this.emit('addMemo', { id, title, content });
+            this.$emit('addMemo', { id, title, content });
         },
     }
 }
