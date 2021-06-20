@@ -21,7 +21,8 @@
         <!-- 약어 사용 후 -->
         <memo-form @addMemo="addMemo"/>
         <ul class="memo-list">
-            <memo />
+            <!-- v-for를 이용하여 memos데이터의 개수만큼 memo 컴포넌트 랜더링하기 -->
+            <memo v-for="memo in moses" :key="memo.id" :memo="memo"/>
         </ul>
     </div>
 </template>

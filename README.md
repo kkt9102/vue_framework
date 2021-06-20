@@ -320,6 +320,7 @@
     18. MemoApp.vue에서 Memo.vue 를 추가한 코드를 <ul>로 감싸준다. (리스트로 표현하기위함)
         -작성코드
 ```html
+        <!-- MemoApp.vue -->
         <template>
             <div class="memo-app">
                 <memo-form @addMemo="addMemo"/>
@@ -329,7 +330,22 @@
             </div>
         </template>
 ```
-    19. 
+    19. v-for를 이용하여 memos데이터의 개수만큼 memo 컴포넌트 랜더링하기
+        -작성코드
+```html
+        <!-- MemoApp.vue -->
+        <template>
+            <div class="memo-app">
+                <memo-form @addMemo="addMemo"/>
+                <ul class="memo-list">
+                    <!-- v-for를 이용하여 memos데이터의 개수만큼 memo 컴포넌트 랜더링하기 -->
+                    <memo v-for="memo in moses" :key="memo.id" :memo="memo"/>
+                </ul>
+            </div>
+        </template>
+```
+---
+    20. 
 ## 특이사항
 1. 프로젝트 생성 후 오류가 뜸. 작동은 정상적으로 됨
     - 오류코드
