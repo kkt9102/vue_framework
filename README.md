@@ -193,6 +193,22 @@
             }
             </script>
         -'template > div' 안에 <memo-app/> 추가하기
+---
+    12. MemoForm.vue에 데이터를 등록하는 코드
+        -MemoForm.vue에 사용자가 값을 입력한 후 저장을 할 때 저장 될 값의 value를 지정해준다.
+        -export default 에 data를 추가해 준 뒤 값을 지정해준다.
+        -작성코드
+        <script>
+        export default {
+            name: "MemoForm",
+            deta () {
+                return {
+                    title: '',
+                    contents: '',
+                }
+            }
+        }
+        </script>
 ## 특이사항
 1. 프로젝트 생성 후 오류가 뜸. 작동은 정상적으로 됨
     - 오류코드

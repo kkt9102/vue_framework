@@ -20,8 +20,8 @@
         <form>
             <fieldset>
                 <div class="memo-form-box">
-                    <input type="text" class="title_input" placeholder="메모의 제목을 입력해주세요." />
-                    <textarea class="body_textarea" placeholder="메모의 내용을 입력해주세요." />
+                    <input type="text" class="title_input" v-model="title" placeholder="메모의 제목을 입력해주세요." />
+                    <textarea class="body_textarea" v-model="content" placeholder="메모의 내용을 입력해주세요." />
                     <button type="reset">초기화</button>
                 </div>
                 <button type="submit">등록하기</button>
@@ -34,11 +34,10 @@
 export default {
     // 컴포넌트의 이름을 MemoForm으로 변경
     name: "MemoForm",
-    deta () {
+    data () {
         return {
-            // 사용자가 웹에서 입력한 값이 저장될 데이터
-            title: "",
-            contents: ""
+            title: '',
+            content: '',
         }
     }
 }
